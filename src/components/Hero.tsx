@@ -26,12 +26,26 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-lg px-8"
+                className="bg-primary hover:bg-primary/90 text-lg px-8 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                onClick={() =>
+                  document
+                    .querySelector("#contacts")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Обсудить проект
                 <Icon name="ArrowRight" size={20} />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                onClick={() =>
+                  document
+                    .querySelector("#services")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
                 <Icon name="Play" size={20} />
                 Посмотреть портфолио
               </Button>
@@ -65,7 +79,7 @@ const Hero = () => {
             <div className="aspect-square bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-3xl p-8">
               <div className="w-full h-full bg-white rounded-2xl shadow-2xl flex items-center justify-center">
                 <div className="text-center space-y-4">
-                  <div className="w-24 h-24 bg-gradient-to-r from-primary to-purple-600 rounded-2xl flex items-center justify-center mx-auto">
+                  <div className="w-24 h-24 bg-gradient-to-r from-primary to-purple-600 rounded-2xl flex items-center justify-center mx-auto transform hover:rotate-12 hover:scale-110 transition-all duration-500">
                     <Icon
                       name="Presentation"
                       size={48}
@@ -83,10 +97,10 @@ const Hero = () => {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center animate-pulse">
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center animate-pulse hover:animate-none hover:scale-125 transition-all duration-300 cursor-pointer">
               <Icon name="Zap" size={24} className="text-purple-600" />
             </div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center animate-pulse">
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center animate-pulse hover:animate-none hover:scale-125 transition-all duration-300 cursor-pointer">
               <Icon name="Target" size={20} className="text-blue-600" />
             </div>
           </div>

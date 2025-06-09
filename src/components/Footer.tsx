@@ -23,10 +23,10 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center transform hover:scale-110 transition-all duration-300">
                 <span className="text-primary font-bold text-lg">AV</span>
               </div>
-              <span className="text-xl font-bold font-montserrat">
+              <span className="text-xl font-bold font-montserrat hover:text-purple-200 transition-colors duration-300">
                 AV-GROUP
               </span>
             </div>
@@ -44,7 +44,13 @@ const Footer = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-white/80 hover:text-white transition-colors text-sm"
+                  className="block text-white/80 hover:text-white transition-all duration-300 text-sm hover:translate-x-1"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector(link.href)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   {link.name}
                 </a>
@@ -95,7 +101,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors"
+                  className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transform hover:scale-110 transition-all duration-300"
                 >
                   <Icon name={social.icon} size={18} className="text-white" />
                 </a>

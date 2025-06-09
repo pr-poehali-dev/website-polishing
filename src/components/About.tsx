@@ -78,11 +78,11 @@ const About = () => {
             {advantages.map((advantage, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow duration-300"
+                className="hover:shadow-xl transition-all duration-500 transform hover:-translate-y-1 hover:scale-105"
               >
                 <CardContent className="p-6">
                   <div className="space-y-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-purple-600 rounded-xl flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary to-purple-600 rounded-xl flex items-center justify-center transform hover:rotate-12 transition-all duration-300">
                       <Icon
                         name={advantage.icon}
                         size={24}

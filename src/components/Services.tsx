@@ -68,12 +68,12 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="hover:shadow-lg transition-shadow duration-300 group"
+              className="hover:shadow-xl transition-all duration-500 group hover:-translate-y-2 border-0 shadow-lg"
             >
               <CardContent className="p-8">
                 <div className="space-y-6">
                   {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary to-purple-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
                     <Icon
                       name={service.icon}
                       size={32}
@@ -94,7 +94,10 @@ const Services = () => {
                   {/* Features */}
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2">
+                      <div
+                        key={idx}
+                        className="flex items-center space-x-2 transform hover:translate-x-2 transition-transform duration-300"
+                      >
                         <Icon
                           name="Check"
                           size={16}

@@ -13,15 +13,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 transition-all duration-300">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-r from-primary to-purple-600 rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-gradient-to-r from-primary to-purple-600 rounded-lg flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
               <span className="text-white font-bold text-lg">AV</span>
             </div>
-            <span className="text-xl font-bold text-primary font-montserrat">
+            <span className="text-xl font-bold text-primary font-montserrat hover:text-purple-600 transition-colors duration-300">
               AV-GROUP
             </span>
           </div>
@@ -32,7 +32,13 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
+                className="text-gray-700 hover:text-primary transition-all duration-300 font-medium relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .querySelector(item.href)
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 {item.name}
               </a>
@@ -41,7 +47,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-primary hover:bg-primary/90">
+            <Button className="bg-primary hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
               Получить консультацию
             </Button>
           </div>
@@ -64,7 +70,13 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className="text-gray-700 hover:text-primary transition-colors duration-200 font-medium"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    document
+                      .querySelector(item.href)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   {item.name}
                 </a>
